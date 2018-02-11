@@ -16,11 +16,15 @@ $(function () {
     var id = $(this).data("id");
 
     $.get("/products/" + id + "/description", function(data) {
-      //alert(data);
+      $("#product-" + id).text(data);
     });
 
     $.get("/products/" + id + "/inventory", function(data) {
-      alert(data);
+      if data === "true" {
+        $(this).before("<p>Available</p>");
+      } else {
+        $(this).before("<p>Sold Out</p>");
+      }
     });
 
   });
