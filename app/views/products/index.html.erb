@@ -19,13 +19,13 @@ $(function () {
       $("#product-" + id).text(data);
     });
 
-    $.get("/products/" + id + "/inventory", function(data) {
-      if data === "true" {
-        $(this).before("<p>Available</p>");
-      } else {
-        $(this).before("<p>Sold Out</p>");
-      }
-    });
+    // $.get("/products/" + id + "/inventory", function(data) {
+    //   if data === "true" {
+    //     $(this).before("<p>Available</p>");
+    //   } else {
+    //     $(this).before("<p>Sold Out</p>");
+    //   }
+    // });
 
   });
 });
