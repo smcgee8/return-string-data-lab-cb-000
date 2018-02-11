@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
 
   def inventory
     product = Product.find(params[:id])
-    truthy = !!(product.inventory)
+    truthy = !!(product.inventory > 0)
     render plain: truthy
   end
 
