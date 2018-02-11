@@ -21,9 +21,9 @@ $(function () {
 
     $.get("/products/" + id + "/inventory", function(data) {
       if (data === "true") {
-        $(this).before("<p>Available</p>");
+        $("#product-" + id).after("<p>Available</p>");
       } else {
-        $(this).before("<p>Sold Out</p>");
+        $("#product-" + id).after("<p>Sold Out</p>");
       }
     });
 
